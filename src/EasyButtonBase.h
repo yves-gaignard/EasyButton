@@ -35,8 +35,8 @@ public:
 #endif
     EasyButtonBase(bool active_low) : _active_low(active_low)
     {
-        _was_btn_held = false;
-	    _held_callback_called = false;
+        _was_btn_held = false;           // @yves.gaignard@gmail.com: Initialise variable in order to fix the first onPressed call 
+	    _held_callback_called = false;   // @yves.gaignard@gmail.com: Initialise variable in order to fix the first onPressedFor call  
     }
     virtual void begin() = 0;                                                   // Initialize a button object and the pin it's connected to.
     virtual bool read() = 0;                                                    // Returns the current debounced button state, true for pressed, false for released.
