@@ -1,7 +1,7 @@
 /**
  * EasyButtonBase.h
  * @author Evert Arias
- * @version 2.0.3
+ * @version 2.0.3.1
  * @license MIT
  */
 
@@ -35,6 +35,8 @@ public:
 #endif
     EasyButtonBase(bool active_low) : _active_low(active_low)
     {
+        _was_btn_held = false;
+	    _held_callback_called = false;
     }
     virtual void begin() = 0;                                                   // Initialize a button object and the pin it's connected to.
     virtual bool read() = 0;                                                    // Returns the current debounced button state, true for pressed, false for released.
